@@ -27,5 +27,12 @@ define(['jquery'], function($) {
 		triggerEvent("checkForUpdates");
 	});
 
+
+	$('.btn.action-reloadPage').click(function(e) {
+		console.log('@reloadPage');
+		e.preventDefault();
+		location.reload();
+	});
+
     return '\'Allo \'Allo!';
 });

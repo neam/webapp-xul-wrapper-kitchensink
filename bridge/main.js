@@ -1,18 +1,26 @@
 var EXPORTED_SYMBOLS = ["Bridge"];
 
 var Bridge = {
-	init: function(window, App, MainUI) {
+	init: function(window, App) {
 
 		App.debug('Bridge.init()');
 
-		window.content.document.addEventListener("openAboutDialog", function(e) {
-			App.debug('openAboutDialog');
-			MainUI.openAboutDialog();
-		}, false);
+		window.document.addEventListener("DOMContentLoaded", function(e) {
+			App.debug('DOMContentLoaded');
+			if (e.target.location.hostname === 'localhost') {
+				var doc = e.target;
 
-		window.content.document.addEventListener("checkForUpdates", function(e) {
-			App.debug('checkForUpdates');
-			MainUI.checkForUpdates();
+				doc.addEventListener("openAboutDialog", function(e) {
+					App.debug('openAboutDialog');
+					App.MainUI.openAboutDialog();
+				}, false);
+
+				doc.addEventListener("checkForUpdates", function(e) {
+					App.debug('checkForUpdates');
+					App.MainUI.checkForUpdates();
+				}, false);
+
+			}
 		}, false);
 
 	},
