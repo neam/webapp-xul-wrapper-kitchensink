@@ -20,6 +20,11 @@ var Bridge = {
 					App.MainUI.openAboutDialog();
 				}, false);
 
+				doc.addEventListener("openExtensionsManager", function(e) {
+					App.debug('openExtensionsManager');
+					App.MainUI.openExtensionsManager();
+				}, false);
+
 				doc.addEventListener("checkForUpdates", function(e) {
 					App.debug('checkForUpdates');
 					App.MainUI.checkForUpdates();

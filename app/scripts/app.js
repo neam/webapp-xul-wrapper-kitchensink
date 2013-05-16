@@ -27,6 +27,12 @@ define(['jquery'], function($) {
 		triggerEvent("openAboutDialog");
 	});
 
+	$('.btn.action-openExtensionsManager').click(function(e) {
+		console.log('@openExtensionsManager');
+		e.preventDefault();
+		triggerEvent("openExtensionsManager");
+	});
+
 	$('.btn.action-checkForUpdates').click(function(e) {
 		console.log('@checkForUpdates');
 		e.preventDefault();
