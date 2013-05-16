@@ -15,6 +15,12 @@ define(['jquery'], function($) {
 
 	}
 
+	$('.btn.action-testNotification').click(function(e) {
+		console.log('@testNotification');
+		e.preventDefault();
+		triggerEvent("testNotification");
+	});
+
 	$('.btn.action-openAboutDialog').click(function(e) {
 		console.log('$openAboutDialog');
 		e.preventDefault();

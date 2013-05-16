@@ -10,6 +10,11 @@ var Bridge = {
 			if (e.target.location.hostname === 'localhost') {
 				var doc = e.target;
 
+				doc.addEventListener("testNotification", function(e) {
+					App.debug('testNotification');
+					App.nativeNotification('Native alert', 'Looks like this');
+				}, false);
+
 				doc.addEventListener("openAboutDialog", function(e) {
 					App.debug('openAboutDialog');
 					App.MainUI.openAboutDialog();
